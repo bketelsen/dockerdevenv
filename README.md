@@ -55,6 +55,8 @@ RUN apt-get update && apt-get install -y i3 terminator feh dmenu dunst connman-u
 RUN easy_install supervisor
 ```
 
+TODO: Good web browser like Chrome, Chromium, Firefox
+
 #### Layer 4 ####
 bketelsen/devenv
 
