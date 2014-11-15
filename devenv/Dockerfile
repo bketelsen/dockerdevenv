@@ -7,4 +7,4 @@ RUN chsh -s /usr/bin/zsh $user
 ADD stowDotfiles.sh /home/$user/bin/stowDotfiles.sh
 RUN chown $user:$user /home/$user/bin/stowDotfiles.sh
 USER $user
-ENTRYPOINT /home/$user/bin/stowDotfiles.sh && supervisord -n -c /home/$user/supervisord.conf
+ENTRYPOINT /home/$user/bin/stowDotfiles.sh $user && supervisord -n -c /home/$user/supervisord.conf
