@@ -64,7 +64,8 @@ an entire local home dir or you'll overwrite your own config files.  Instead, se
 Get the VNC port:
 `docker port bketelsen/devenv 5901`
 
-Then connect with vnc via DOCKERHOST_IP:VNCPORT
+Then connect with vnc via DOCKERHOST_IP:VNCPORT  The vnc password is `docker` and is contained in /useradd/vncpasswd.  
+Generate your own if you wish and replace this file.
 
 TODO: Consider ssh tunneling instead of or in addition to VNC port expose.
 
