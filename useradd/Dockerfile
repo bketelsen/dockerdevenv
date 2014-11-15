@@ -2,26 +2,29 @@ FROM bketelsen/uibase
 
 MAINTAINER Brian Ketelsen <bketelsen@gmail.com>
 
-RUN adduser bketelsen && echo "bketelsen:bketelsen" | chpasswd && adduser bketelsen sudo
+ENV user bketelsen 
+RUN adduser $user && echo "$user:$user" | chpasswd && adduser $user sudo
 
-ADD supervisord.conf /home/bketelsen/supervisord.conf
+ADD supervisord.conf /home/$user/supervisord.conf
 
-ADD vncpasswd /home/bketelsen/.vnc/passwd
-ADD xstartup /home/bketelsen/.vnc/xstartup
-RUN chown bketelsen:bketelsen -R /home/bketelsen/.vnc/
+ADD vncpasswd /home/$user/.vnc/passwd
+ADD xstartup /home/$user/.vnc/xstartup
+RUN chown $user:$user -R /home/$user/.vnc/
 
-RUN chmod 400 /home/bketelsen/.vnc/passwd
+RUN chmod 400 /home/$user/.vnc/passwd
 
-USER bketelsen
+USER $user
 
-ENV HOME /home/bketelsen
+ENV HOME /home/$user
 
-WORKDIR /home/bketelsen/
-VOLUME /home/bketelsen
-RUN echo "exec i3" > /home/bketelsen/.xinitrc
+WORKDIR /home/$user/
+VOLUME /home/$user
+RUN echo "exec i3" > /home/$user/.xinitrc
 EXPOSE 5901
-ENV USER bketelsen
-RUN chmod +x /home/bketelsen/.vnc/xstartup
+
+#for vnc
+ENV USER $user
+RUN chmod +x /home/$user/.vnc/xstartup
 
 ENTRYPOINT /bin/bash
 

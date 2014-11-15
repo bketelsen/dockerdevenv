@@ -1,7 +1,7 @@
 FROM bketelsen/useradd
 
 MAINTAINER Brian Ketelsen <bketelsen@gmail.com>
-
-RUN cd /home/bketelsen && git clone https://github.com/bketelsen/dotfiles
+ENV user bketelsen
+RUN cd /home/$user && git clone https://github.com/$user/dotfiles
 RUN chsh /usr/bin/zsh
-ENTRYPOINT supervisord -n -c /home/bketelsen/supervisord.conf
+ENTRYPOINT supervisord -n -c /home/$user/supervisord.conf
