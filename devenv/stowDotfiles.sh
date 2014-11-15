@@ -2,8 +2,9 @@
 
 set -e
 cd /home/${1}/dotfiles
+git clone https://github.com/${1}/dotfiles /home/${1}/dotfiles
 #git pull
-#git submodule update --init --recursive
+git submodule update --init --recursive
 #install fonts
 /home/${1}/dotfiles/_vendor/powerline-fonts/install.sh
 
