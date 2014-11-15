@@ -21,6 +21,7 @@ Docker or Boot2Docker.
 
 #### USAGE ####
 Usage instructions assume that you've cloned this repo and changed my username {bketelsen} to your own.
+*** Running the docker image bketelsen/devenv will give you my dotfiles, and you'll be running as user `bketelsen`.  Instead FORK this repo and make changes. ***
 Also assumed: You've run the buildContainers.sh script and pushed your images to hub.docker.com
 
 ##### Mac #####
