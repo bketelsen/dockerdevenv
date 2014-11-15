@@ -19,6 +19,33 @@ But I wanted to be able to develop on my Mac locally when I travel and have no I
 when Internet is unreliably slow.  Using this Docker development container works equally well on any machine with
 Docker or Boot2Docker.  
 
+#### USAGE ####
+Usage instructions assume that you've cloned this repo and changed my username {bketelsen} to your own.
+Also assumed: You've run the buildContainers.sh script and pushed your images to hub.docker.com
+
+##### Mac #####
+Install boot2docker
+```
+boot2docker init
+export DOCKER_HOST={get boot2docker IP and add it here}
+docker run -d -P -v /Users/YOU/yourSourceDir:/home/YOU/yourSourceDir yourdockerusername/devenv
+```
+
+##### Linux #####
+```
+docker run -d -P -v /Users/YOU/yourSourceDir:/home/YOU/yourSourceDir yourdockerusername/devenv
+```
+
+##### Connecting To the UI #####
+`docker port yourusername/devenv` will give you two ports.  The port that maps to 5901 is sized for 
+a Thunderbolt display at full screen.  The port that maps to 5902 is sized for a MBP 15" retina display
+at full screen.  
+
+Use any vnc client, and connect to the DOCKER_HOST:MAPPED_PORT  e.g.  mylinuxserver:49153
+Password is `docker`.
+
+
+
 ### Layers Like an Ogre ###
 These docker images represent layers that you can build from to create a dev environment that
 suits you.
