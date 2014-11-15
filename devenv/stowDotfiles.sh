@@ -25,3 +25,9 @@ stow -vv zsh-custom
 #git
 stow -vv git
 
+#i3
+stow -vv i3
+
+#config
+stow -vv config
+
