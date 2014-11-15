@@ -24,3 +24,4 @@ stow -vv zsh-custom
 
 #git
 stow -vv git
+
