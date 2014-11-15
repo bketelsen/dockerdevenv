@@ -25,7 +25,9 @@ This layer adds openssh-server.  Not using it yet.  May never need it.  But it's
 #### Layer 2 ####
 bketelsen/commandbase
 
-This layer adds development tools and command tools.
+This layer adds development tools and command tools.  Right now they're development tools for Go, but they could be for any language.
+In fact, one could create many different `commandbase` containers and have a unique dev environment for each different
+programming language.  Not necessary here, but an interesting idea.
 
 ```
 RUN apt-get update && apt-get install -y ca-certificates curl unzip tar python-pip build-essential git-core mercurial bzr cmake zsh
