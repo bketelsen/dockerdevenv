@@ -3,6 +3,13 @@
 The idea is that I want to be able to have a well-configured 
 development environment anywhere I go.  I love i3 Window Manager, and hate to be without it. 
 
+More importantly, this process makes your development environment 100% repeatable and portable; which 
+is the same ethos that Docker attempts to bring to your applications.  No more pain when you get a new 
+developer machine.  No more pain when working on a borrowed computer.  No more pain when working on a remote
+server.  Just docker pull bketelsen/devenv, and run it.  You'll have exactly the same development
+experience on EVERY computer you use, whether it's your Mac or a debugging session on a QA/Staging 
+server.
+
 ### Layers Like an Ogre ###
 These docker images represent layers that you can build from to create a dev environment that
 suits you.
@@ -51,6 +58,13 @@ To run you should attach a local volume.  Although the entire home directory is 
 an entire local home dir or you'll overwrite your own config files.  Instead, selectively attach folders like this:
 
 `docker run -d -P -v /Users/bketelsen/src:/home/bketelsen/src bketelsen/devenv`
+
+Get the VNC port:
+`docker port bketelsen/devenv 5901`
+
+Then connect with vnc via DOCKERHOST_IP:VNCPORT
+
+TODO: Consider ssh tunneling instead of or in addition to VNC port expose.
 
 Then your local `src` directory will be available inside the container.
 
