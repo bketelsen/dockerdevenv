@@ -10,6 +10,13 @@ server.  Just docker pull bketelsen/devenv, and run it.  You'll have exactly the
 experience on EVERY computer you use, whether it's your Mac or a debugging session on a QA/Staging 
 server.
 
+#### Inspiration ####
+I've been running a headless Arch linux box for several months now as my main development environment.  I
+connect via VNC using Mac OS X's screen sharing, or VNC viewer on my iPad.  It's fast, efficient, and awesome.
+
+But I wanted to be able to develop on my Mac locally when I travel and have no Internet connection.  Or 
+when Internet is unreliably slow.
+
 ### Layers Like an Ogre ###
 These docker images represent layers that you can build from to create a dev environment that
 suits you.
