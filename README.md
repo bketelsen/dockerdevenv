@@ -23,3 +23,25 @@ I may try running this on various hosts until I find something I'm happy with:
 
 A fully configured but portable development environment seems like a great idea.  Let's
 see if it works.
+
+The VNC password is `docker`.  I borrowed the idea for the vnc config from some other docker repo, and 
+it was already generated.  So I lazily kept it.
+
+### Running ###
+First, clone this repo and change all instances of `bketelsen` to your username in all the various
+files.
+
+Second, you might want to edit the config file that gets put in ~/.i3/config  It has my preferences in 
+it and you might not like them.
+
+Third, run the container:
+```
+docker run -d -P -v /home/you/somedir:/home/you/somedir you/dockerdevenv
+```
+
+```
+docker ps
+```
+find port for dockerdevenv 5901, and attach with VNC viewer.
+
+Profit
