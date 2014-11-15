@@ -1,7 +1,7 @@
 FROM bketelsen/uibase
 
 MAINTAINER Brian Ketelsen <bketelsen@gmail.com>
-
+USER root
 ENV user bketelsen 
 RUN adduser $user && echo "$user:$user" | chpasswd && adduser $user sudo
 
