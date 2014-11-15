@@ -2,9 +2,7 @@
 
 set -e
 cd /home/${1}
-echo `pwd`
-echo $1
-echo `whoami`
+git clone https://github.com/${1}/dotfiles /home/${1}/dotfiles
 cd /home/${1}/dotfiles
 git pull
 #get fonts
@@ -26,6 +24,7 @@ stow -vv zsh-custom
 stow -vv git
 
 #i3
+rm -rf /home/${1}/.i3
 stow -vv i3
 
 #config
