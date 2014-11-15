@@ -2,6 +2,7 @@
 
 set -e
 cd /home/${1}/dotfiles
+git pull
 git submodule update --init --recursive
 #install fonts
 /home/${1}/dotfiles/_vendor/powerline-fonts/install.sh
