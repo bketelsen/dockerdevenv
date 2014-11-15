@@ -15,7 +15,8 @@ I've been running a headless Arch linux box for several months now as my main de
 connect via VNC using Mac OS X's screen sharing, or VNC viewer on my iPad.  It's fast, efficient, and awesome.
 
 But I wanted to be able to develop on my Mac locally when I travel and have no Internet connection.  Or 
-when Internet is unreliably slow.
+when Internet is unreliably slow.  Using this Docker development container works equally well on any machine with
+Docker or Boot2Docker.  
 
 ### Layers Like an Ogre ###
 These docker images represent layers that you can build from to create a dev environment that
