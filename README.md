@@ -55,6 +55,9 @@ Right now, it's only adding the supervisord.conf file that starts vncserver.  Fu
 * clone dotfiles
 * symlink dotfiles
 * git pull dotfiles at runtime to get latest
+* powerline fonts
+* direnv
+
 
 To run you should attach a local volume.  Although the entire home directory is exported as a volume, you shouldn't attach
 an entire local home dir or you'll overwrite your own config files.  Instead, selectively attach folders like this:

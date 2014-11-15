@@ -24,7 +24,7 @@ docker push bketelsen/useradd
 
 cd ../devenv 
 echo "Building bketelsen/devenv"
-docker build -t bketelsen/devenv
+docker build -t bketelsen/devenv .
 docker push bketelsen/devenv
 
 cd ..
