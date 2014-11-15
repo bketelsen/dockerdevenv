@@ -9,4 +9,5 @@ ADD config /home/$user/.i3/config
 RUN chown $user:$user /home/$user/.i3/config
 RUN chown $user:$user /home/$user/bin/stowDotfiles.sh
 USER $user
+RUN git clone https://github.com/$user/dotfiles /home/$user/dotfiles
 ENTRYPOINT /home/$user/bin/stowDotfiles.sh $user && supervisord -n -c /home/$user/supervisord.conf

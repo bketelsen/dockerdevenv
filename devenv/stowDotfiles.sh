@@ -5,8 +5,8 @@ cd /home/${1}
 echo `pwd`
 echo $1
 echo `whoami`
-git clone https://github.com/${1}/dotfiles /home/${1}/dotfiles
 cd /home/${1}/dotfiles
+git pull
 #get fonts
 git submodule update --init --recursive
 
