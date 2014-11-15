@@ -10,7 +10,7 @@ ADD supervisord.conf /home/$user/supervisord.conf
 ADD vncpasswd /home/$user/.vnc/passwd
 ADD xstartup /home/$user/.vnc/xstartup
 RUN chown $user:$user -R /home/$user/.vnc/
-
+RUN chown $user:$user /home/$user/supervisord.conf
 RUN chmod 400 /home/$user/.vnc/passwd
 
 USER $user
