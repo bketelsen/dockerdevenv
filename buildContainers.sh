@@ -2,6 +2,7 @@
 
 set -e
 
+git submodule update --init --recursive
 cd osbase
 echo "Building bketelsen/osbase"
 docker build -t bketelsen/osbase .

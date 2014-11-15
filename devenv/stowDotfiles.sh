@@ -1,12 +1,7 @@
 #! /bin/bash
 
 set -e
-cd /home/${1}
-git clone https://github.com/${1}/dotfiles /home/${1}/dotfiles
 cd /home/${1}/dotfiles
-git pull
-#get fonts
-git submodule update --init --recursive
 
 #install fonts
 /home/${1}/dotfiles/_vendor/powerline-fonts/install.sh
