@@ -1,8 +1,9 @@
 #! /bin/bash
 
 set -e
-cd /home/${1}/dotfiles
 git clone https://github.com/${1}/dotfiles /home/${1}/dotfiles
+cd /home/${1}/dotfiles
+
 #git pull
 git submodule update --init --recursive
 #install fonts
