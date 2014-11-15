@@ -1,0 +1,3 @@
+[submodule "devenv/dotfiles"]
+	path = devenv/dotfiles
+	url = https://github.com/bketelsen/dotfiles
