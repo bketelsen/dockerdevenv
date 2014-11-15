@@ -65,7 +65,9 @@ an entire local home dir or you'll overwrite your own config files.  Instead, se
 `docker run -d -P -v /Users/bketelsen/src:/home/bketelsen/src bketelsen/devenv`
 
 Get the VNC port:
-`docker port bketelsen/devenv 5901`
+`docker port bketelsen/devenv 5901` for Thunderbolt display full screen.
+or
+`docker port bketelsen/devenv 5902` for MBP 15" display full screen
 
 Then connect with vnc via DOCKERHOST_IP:VNCPORT  The vnc password is `docker` and is contained in /useradd/vncpasswd.  
 Generate your own if you wish and replace this file.
