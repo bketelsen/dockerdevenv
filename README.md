@@ -1,4 +1,5 @@
 ### Docker Dev Env ###
+*** Not quite yet working, but really close ***
 
 The idea is that I want to be able to have a well-configured 
 development environment anywhere I go.  I love i3 Window Manager, and hate to be without it. 
@@ -41,7 +42,7 @@ In fact, one could create many different `commandbase` containers and have a uni
 programming language.  Not necessary here, but an interesting idea.
 
 ```
-RUN apt-get update && apt-get install -y ca-certificates curl unzip tar python-pip build-essential git-core mercurial bzr cmake zsh
+RUN apt-get update && apt-get install -y ca-certificates curl unzip tar ...
 RUN curl -Ls https://storage.googleapis.com/golang/go1.3.3.linux-amd64.tar.gz | tar xvzf - -C /usr/local/go --strip-components=1
 ```
 
@@ -60,15 +61,9 @@ TODO: Good web browser like Chrome, Chromium, Firefox
 #### Layer 4 ####
 bketelsen/devenv
 
-This is the final layer, the container that you'll want to run when it's all built.  It adds your personalized configurations.
-Work in Progress here.
+This is the final layer, the container that you'll want to run. It adds your personalized configurations.
 
-Right now, it's only adding the supervisord.conf file that starts vncserver.  Future steps:
-
-* clone dotfiles
-* symlink dotfiles
-* git pull dotfiles at runtime to get latest
-* powerline fonts
+TODO: 
 * direnv
 
 
@@ -101,13 +96,17 @@ I added all these unnecessary layers so that you can inherit from any level and 
 It also significantly reduces build times when you make a change.  Only layers with changes will get rebuilt and 
 pushed.
 
+All the Dockerfiles in the repo use a $user variable.  You should be able to clone this repository and make it work
+by changing the single ENV user statements in them.  Same goes with the shell scripts.  The stowDotfiles.sh script expects
+that you have a github.com/YOU/dotfiles repository.  It also makes grand assumptions about what things you'll want
+to stow.  Change most of this.
+
 I'm very open to community suggestions and ideas about how to improve this.  Especially with the user layering.  
 
 
 ### TODO ###
-* Give buildContainers.sh a username and have it replace a stubbed username with the one given using sed.
-* Or? Pass in a username as an ENV var and use ONBUILD to rig all this up?  Might not be possible, fun to try.
-* Dotfiles
+* DONE - Give buildContainers.sh a username and have it replace a stubbed username with the one given using sed.
+* DONE - Or -- Pass in a username as an ENV var and use ONBUILD to rig all this up?  Might not be possible, fun to try.
 
 
 
