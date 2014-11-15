@@ -25,6 +25,9 @@ suits you.
 #### Layer 0 ####
 ubuntu
 
+This may change, because I really like Arch.  But it is easier to setup an Ubuntu machine than an Arch machine (for me)
+  so I'm starting here.
+
 #### Layer 1 ####
 bketelsen/osbase 
 
