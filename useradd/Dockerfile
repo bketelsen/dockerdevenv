@@ -21,6 +21,7 @@ WORKDIR /home/$user/
 VOLUME /home/$user
 RUN echo "exec i3" > /home/$user/.xinitrc
 EXPOSE 5901
+EXPOSE 5902
 
 #for vnc
 ENV USER $user
