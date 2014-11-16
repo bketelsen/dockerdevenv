@@ -15,5 +15,5 @@ rm -rf /home/bketelsen/.i3
 stow -vv i3  
 stow -vv config
 
-
+vim +NeoBundleInstall +qall
 
