@@ -1,4 +1,4 @@
-FROM dockerfile/ubuntu
+FROM ubuntu
 MAINTAINER Brian Ketelsen <bketelsen@gmail.com>
 RUN apt-get update && apt-get install -y openssh-server \
       ca-certificates curl unzip tar python-pip build-essential \
@@ -40,6 +40,21 @@ ENV TEMP /tmp
 ## Dotfiles
 
 RUN git clone https://github.com/bketelsen/dotfiles /home/bketelsen/dotfiles
+#git pull
+RUN cd /home/bketelsen/dotfiles && git submodule update --init --recursive
+#install fonts
+RUN /home/${1}/dotfiles/_vendor/powerline-fonts/install.sh
+
+# put vim config in place
+RUN cd /home/bketelsen/dotfiles \ 
+  && stow -vv vim \ 
+  && stow -vv zsh \
+  && stow -vv zsh-custom \
+  && stow -vv git \
+  && rm -rf /home/${1}/.i3 \
+  stow -vv i3 && \
+  stow -vv config
+
 
 
 EXPOSE 5901
