@@ -1,6 +1,8 @@
 #! /bin/bash
 
 set -e
+export TEMP=/tmp
+
 git clone https://github.com/${1}/dotfiles /home/${1}/dotfiles
 cd /home/${1}/dotfiles
 
