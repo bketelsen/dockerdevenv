@@ -61,8 +61,7 @@ RUN cd /home/bketelsen/dotfiles \
 EXPOSE 5901
 EXPOSE 5902
 
-ENTRYPOINT /bin/bash
-CMD /bin/bash
+CMD supervisord -n -c /home/bketelsen/supervisord.conf
 
 
 
