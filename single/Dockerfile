@@ -15,13 +15,16 @@ ADD supervisord.conf /home/bketelsen/supervisord.conf
 ADD vncpasswd /home/bketelsen/.vnc/passwd
 ADD xstartup /home/bketelsen/.vnc/xstartup
 
+# Run as user for configs to stick
+USER bketelsen
 RUN /src/provision/customize-user.sh
 
+USER root
+RUN /src/provision/root-user-customize.sh
 
-
-  
+USER bketelsen  
 WORKDIR /home/bketelsen
-USER bketelsen
+
 # these are required by various parts of X, i3, zsh
 ENV HOME /home/bketelsen
 ENV USER bketelsen
@@ -30,8 +33,7 @@ ENV TEMP /tmp
 
 EXPOSE 5901
 EXPOSE 5902
-ADD startup.sh /home/bketelsen/bin/startup.sh
-CMD  /home/bketelsen/bin/startup.sh
+CMD  /src/provision/startup.sh
 
 
 
