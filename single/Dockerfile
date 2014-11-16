@@ -52,7 +52,7 @@ RUN cd /home/bketelsen/dotfiles \
   && stow -vv zsh \
   && stow -vv zsh-custom \
   && stow -vv git \
-  && rm -rf /home/${1}/.i3 \
+  && rm -rf /home/bketelsen/.i3 \
   stow -vv i3 && \
   stow -vv config
 
