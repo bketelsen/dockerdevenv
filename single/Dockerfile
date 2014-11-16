@@ -44,7 +44,7 @@ RUN git clone https://github.com/bketelsen/dotfiles /home/bketelsen/dotfiles
 #git pull
 RUN cd /home/bketelsen/dotfiles && git submodule update --init --recursive
 #install fonts
-RUN /home/${1}/dotfiles/_vendor/powerline-fonts/install.sh
+RUN /home/bketelsen/dotfiles/_vendor/powerline-fonts/install.sh
 
 # put vim config in place
 RUN cd /home/bketelsen/dotfiles \ 
