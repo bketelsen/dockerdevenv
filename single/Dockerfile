@@ -53,8 +53,8 @@ RUN cd /home/bketelsen/dotfiles \
   && stow -vv zsh-custom \
   && stow -vv git \
   && rm -rf /home/bketelsen/.i3 \
-  stow -vv i3 && \
-  stow -vv config
+  && stow -vv i3  \
+  && stow -vv config
 
 
 
