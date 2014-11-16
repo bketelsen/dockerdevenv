@@ -1,5 +1,6 @@
 FROM ubuntu
 MAINTAINER Brian Ketelsen <bketelsen@gmail.com>
+ENV DEBIAN_FRONTEND noninteractive
 RUN apt-get update && apt-get install -y openssh-server \
       ca-certificates curl unzip tar python-pip build-essential \
       git-core mercurial bzr zsh stow python-dev ctags \
