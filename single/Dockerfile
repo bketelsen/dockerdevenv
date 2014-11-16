@@ -30,8 +30,8 @@ ENV TEMP /tmp
 
 EXPOSE 5901
 EXPOSE 5902
-ADD startup.sh 
-CMD  startup.sh
+ADD startup.sh /home/bketelsen/bin/startup.sh
+CMD  /home/bketelsen/bin/startup.sh
 
 
 
