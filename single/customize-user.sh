@@ -6,14 +6,14 @@ cd /home/bketelsen/dotfiles && git submodule update --init --recursive
 /home/bketelsen/dotfiles/_vendor/powerline-fonts/install.sh
 
 # put vim config in place
-cd /home/bketelsen/dotfiles \ 
-  && stow -vv vim \ 
-  && stow -vv zsh \
-  && stow -vv zsh-custom \
-  && stow -vv git \
-  && rm -rf /home/bketelsen/.i3 \
-  && stow -vv i3  \
-  && stow -vv config
+cd /home/bketelsen/dotfiles  
+stow -vv vim  
+stow -vv zsh 
+stow -vv zsh-custom 
+stow -vv git 
+rm -rf /home/bketelsen/.i3 
+stow -vv i3  
+stow -vv config
 
 
 chown -R bketelsen /home/bketelsen && chgrp -R bketelsen /home/bketelsen
