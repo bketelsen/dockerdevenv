@@ -1,5 +1,6 @@
 ### Docker Dev Env ###
 *** Works - but needs a few tweaks to make it more efficient ***
+Work in branch single-container right now shows future possible directions.
 
 The idea is that I want to be able to have a well-configured 
 development environment anywhere I go.  I love i3 Window Manager, and hate to be without it. 
