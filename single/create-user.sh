@@ -1,3 +1,6 @@
 #! /bin/bash
 
-adduser --disabled-password --gecos "" --home=/home/bketelsen bketelsen 
+useradd bketelsen -s /usr/bin/zsh -m 
+sudo chpasswd << 'END'
+bketelsen:password
+END
