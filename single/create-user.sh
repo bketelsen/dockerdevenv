@@ -1,6 +1,6 @@
 #! /bin/bash
 
 useradd bketelsen -s /usr/bin/zsh -m 
-sudo chpasswd << 'END'
+chpasswd << 'END'
 bketelsen:password
 END
