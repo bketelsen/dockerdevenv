@@ -1,4 +1,4 @@
-FROM ubuntu
+FROM ubuntu:15.10
 MAINTAINER Brian Ketelsen <bketelsen@gmail.com>
 
 ADD . /src/provision
@@ -6,14 +6,9 @@ ADD . /src/provision
 RUN /src/provision/base-services.sh
 RUN /src/provision/dev-packages.sh
 RUN /src/provision/install-go.sh
-RUN /src/provision/install-ui.sh
 
 #add required files after creating user
 RUN /src/provision/create-user.sh
-
-ADD supervisord.conf /home/bketelsen/supervisord.conf
-ADD vncpasswd /home/bketelsen/.vnc/passwd
-ADD xstartup /home/bketelsen/.vnc/xstartup
 
 # Run as user for configs to stick
 USER bketelsen
@@ -30,10 +25,10 @@ ENV HOME /home/bketelsen
 ENV USER bketelsen
 ENV TEMP /tmp
 
-
-EXPOSE 5901
-EXPOSE 5902
-CMD  /src/provision/startup.sh
+RUN mkdir /home/bketelsen/src && chown -R bketelsen:bketelsen /home/bketelsen/src
+VOLUME /home/bketelsen/src
+RUN touch /home/bketelsen/src/.thing
+CMD [/usr/bin/zsh]
 
 
 

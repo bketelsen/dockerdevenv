@@ -4,8 +4,6 @@
 # abort on errors 
 set -e
 # don't expect a tty
-DEBIAN_FRONTEND=noninteractive apt-get update && apt-get install -y openssh-server \
-      ca-certificates curl unzip tar \
-      zsh stow   
-DEBIAN_FRONTEND=noninteractive apt-get clean && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
+
+DEBIAN_FRONTEND=noninteractive apt-get update && apt-get install -y ca-certificates curl unzip tar zsh stow xclip
 

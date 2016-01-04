@@ -1,4 +1,5 @@
 #! /bin/bash
+set -e
 
 useradd bketelsen -s /usr/bin/zsh -m 
 chpasswd << 'END'

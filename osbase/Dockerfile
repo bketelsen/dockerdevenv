@@ -1,4 +1,4 @@
-FROM dockerfile/ubuntu
+FROM ubuntu
 
 MAINTAINER Brian Ketelsen <bketelsen@gmail.com>
 

@@ -1,4 +1,6 @@
-echo "exec i3" > /home/bketelsen/.xinitrc
+#!/bin/bash
+
+
 git clone https://github.com/bketelsen/dotfiles /home/bketelsen/dotfiles
 #git pull
 cd /home/bketelsen/dotfiles && git submodule update --init --recursive
@@ -8,11 +10,12 @@ cd /home/bketelsen/dotfiles && git submodule update --init --recursive
 # put vim config in place
 cd /home/bketelsen/dotfiles  
 stow -vv vim  
+stow -vv neovim
 stow -vv zsh 
 stow -vv zsh-custom 
 stow -vv git 
 rm -rf /home/bketelsen/.i3 
-stow -vv i3  
 stow -vv config
+
 
 
